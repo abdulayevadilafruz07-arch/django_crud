@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Country</title>
+</head>
+<body>
+    <h2>Haqiqatan ham o‘chirmoqchimisiz?</h2>
+
+    <p>{{ house.title }} - {{ house.address }}</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Ha, o‘chirish</button>
+        <a href="{% url 'index' %}">Yo‘q</a>
+    </form>
+</body>
+</html>

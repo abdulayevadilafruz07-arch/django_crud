@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countries</title>
+</head>
+<body>
+    <h1>Davlatlar ro'yxati</h1>
+
+    <a href="{% url 'create' %}">+ Yangi davlat qo‘shish</a>
+    <hr>
+
+    {% for davlat_c in davlatlar %}
+        <h3>{{ davlat_c.nomi }}</h3>
+        <p>Qitasi: {{ davlat_c.qitasi }}</p>
+        <p>Maydoni: {{ davlat_c.maydoni }}</p>
+
+        <a href="{#}">Batafsil</a> |
+        <a href="{#}">Tahrirlash</a> |
+        <a href="{#}">O‘chirish</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>

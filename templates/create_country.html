@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Country</title>
+</head>
+<body>
+    <h1>Yangi davlat qoshish</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+
+
+        <button type="submit">Saqlash</button>
+    </form>
+
+    <a href="{% url 'index' %}">⬅ Orqaga</a>
+</body>
+</html>

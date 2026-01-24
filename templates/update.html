@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Country</title>
+</head>
+<body>
+    <h1>Davlat ma'lumotlarini yangilash</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="title" value="{{ houses.title }}"><br><br>
+        <input type="text" name="address" value="{{ houses.address }}"><br><br>
+        <input type="number" name="price" value="{{ houses.price }}"><br><br>
+        <input type="number" name="rooms" value="{{ houses.rooms }}"><br><br>
+        <input type="number" name="area" value="{{ houses.area }}"><br><br>
+        <input type="text" name="is_active" value="{{ houses.is_active }}"><br><br>
+        <input type="date" name="created_at" value="{{ houses.created_at|date:'Y-m-d' }}"><br><br>
+        <input type="text" name="country" value="{{ houses.country }}"><br><br>
+        <input type="text" name="city" value="{{ houses.city }}"><br><br>
+        <input type="text" name="region" value="{{ houses.region }}"><br><br>
+
+        <button type="submit">Yangilash</button>
+    </form>
+</body>
+</html>
