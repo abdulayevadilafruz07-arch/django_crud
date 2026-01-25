@@ -14,9 +14,9 @@
         <p>Qitasi: {{ davlat_c.qitasi }}</p>
         <p>Maydoni: {{ davlat_c.maydoni }}</p>
 
-        <a href="{#}">Batafsil</a> |
-        <a href="{#}">Tahrirlash</a> |
-        <a href="{#}">O‘chirish</a>
+        <a href="{% url 'detail' davlat_c.id%}">Batafsil</a>
+        <a href="{% url 'update' davlat_c.id%}">Tahrirlash</a>
+        <a href="{% url 'delete' davlat_c.id %}">O‘chirish</a>
         <hr>
     {% endfor %}
 </body>
