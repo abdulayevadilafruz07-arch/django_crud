@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
+    <meta charset="UTF-8">
     <title>Delete Country</title>
 </head>
 <body>
     <h2>Haqiqatan ham o‘chirmoqchimisiz?</h2>
 
-    <p>{{ davlat_c.nomi }} - {{ davlat.qitasi }}</p>
+    <p>{{ davlat_c.nomi }} — {{ davlat_c.qitasi }}</p>
 
     <form method="post">
         {% csrf_token %}

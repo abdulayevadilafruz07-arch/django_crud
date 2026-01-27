@@ -45,15 +45,14 @@ class UpdateCountry(View):
             return redirect('detail', davlat_c.pk)
 
 class DeleteCountry(View):
-    def get(self, request, id):
-        davlat_c = get_object_or_404(davlat, pk=id)
+    def get(self, request, pk):
+        davlat_c = get_object_or_404(davlat, pk=pk)
+        return render(request, 'delete.html', {'davlat_c': davlat_c})
+
+    def post(self, request, pk):
+        davlat_c = get_object_or_404(davlat, pk=pk)
         davlat_c.delete()
         return redirect('index')
-    # return render(request, 'delete.html', {'davlat': davlat})
-
-
-
-
 
     # def post(self, request):
     #     form = CountryForm(request.POST)

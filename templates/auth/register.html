@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #0d6efd;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>SignUp</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Username</label>
+        <input placeholder="username"  name="username" type="text"><br><br>
+
+        <label>email</label>
+        <input placeholder="email"  name="email" type="email"><br><br>
+
+        <label>Password</label>
+        <input placeholder="password"  name="password" type="password"><br><br>
+
+        <label>Confirm password</label>
+        <input placeholder="confirm password"  name="confirm_password" type="password"><br><br>
+
+
+        <button type="submit">SignUp</button>
+    </form>
+</div>
+
+</body>
+</html>

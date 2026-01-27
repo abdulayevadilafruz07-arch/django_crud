@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="uz">
 <head>
+    <meta charset="UTF-8">
     <title>Create Country</title>
 </head>
 <body>
-    <h1>Yangi davlat qoshish</h1>
+    <h1>Yangi davlat qo‘shish</h1>
 
     <form method="post">
         {% csrf_token %}
 
-
+        {{ form.as_p }}
 
         <button type="submit">Saqlash</button>
     </form>
 
+    <br>
     <a href="{% url 'index' %}">⬅ Orqaga</a>
 </body>
 </html>
