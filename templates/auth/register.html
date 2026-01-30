@@ -67,6 +67,9 @@
         <label>Confirm password</label>
         <input placeholder="confirm password"  name="confirm_password" type="password"><br><br>
 
+        {% if error %}
+        <p style="color: red">{{error}}</p>
+        {% endif %}
 
         <button type="submit">SignUp</button>
     </form>

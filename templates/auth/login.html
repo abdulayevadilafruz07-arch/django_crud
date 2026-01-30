@@ -60,17 +60,17 @@
         {% csrf_token %}
 
         <label>Username</label>
-        <input placeholder="username" name="username" type="text" required>
+        <input placeholder="username" name="username" type="text" ><br><br>
+
+        <input placeholder="email" name="email" type="email"ex ><br><br>
 
         <label>Password</label>
-        <input placeholder="password" name="password" type="password" required>
+        <input placeholder="password" name="password" type="password"><br><br>
 
         {% if error %}
         <p style="color: red">{{error}}</p>
         {% endif %}
-
-
-        <button type="submit">Login</button>
+        <button type="submit">SignIn</button>
 
     </form>
 </div>

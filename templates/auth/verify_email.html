@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Email tasdiqlash</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #4f46e5, #9333ea);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .verify-container {
+            background: #fff;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .verify-container h2 {
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .verify-container p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .verify-container input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            outline: none;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 4px;
+        }
+
+        .verify-container input:focus {
+            border-color: #6366f1;
+        }
+
+        .verify-container button {
+            width: 100%;
+            padding: 12px;
+            background: #6366f1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .verify-container button:hover {
+            background: #4f46e5;
+        }
+
+        .error {
+            color: #dc2626;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .resend {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        .resend a {
+            color: #6366f1;
+            text-decoration: none;
+        }
+
+        .resend a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="verify-container">
+    <h2>Emailni tasdiqlash</h2>
+    <p>Emailingizga yuborilgan 6 xonali kodni kiriting</p>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="code" placeholder="------" maxlength="6" required>
+        <button type="submit">Tasdiqlash</button>
+    </form>
+
+    <div class="resend">
+        Kod kelmadimi?
+        <a href="#">Qayta yuborish</a>
+    </div>
+</div>
+
+</body>
+</html>
